@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'bucher'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            
+			<label index="tx_bucher_domain_model_buchung">Buchung</label>
+			<label index="tx_bucher_domain_model_buchung.name">Name</label>
+			<label index="tx_bucher_domain_model_buchung.datum">Datum</label>
+			<label index="tx_bucher_domain_model_buchung.uhrzeit">Uhrzeit</label>
+			<label index="tx_bucher_domain_model_buchung.email">Email</label>
+			<label index="tx_bucher_domain_model_buchung.telefon">Telefon</label>
+			<label index="tx_bucher_domain_model_buchung.personen">Personen</label>
+			<label index="tx_bucher_domain_model_buchung.unterschrift">Unterschrift</label>
+			<label index="tx_bucher_domain_model_buchung.notiz">Notiz</label>
+			<label index="tx_bucher_domain_model_buchung.schicht">Schicht</label>
+			<label index="tx_bucher_domain_model_buchung.tisch">Tisch</label>
+
+			<label index="tx_bucher_domain_model_tisch">Tisch</label>
+			<label index="tx_bucher_domain_model_tisch.number">Number</label>
+			<label index="tx_bucher_domain_model_tisch.xpos">Xpos</label>
+			<label index="tx_bucher_domain_model_tisch.ypos">Ypos</label>
+			<label index="tx_bucher_domain_model_tisch.type">Type</label>
+
+		</languageKey>
+	</data>
+</T3locallang>

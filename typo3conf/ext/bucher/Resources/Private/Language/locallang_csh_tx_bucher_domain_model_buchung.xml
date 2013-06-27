@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_bucher_domain_model_buchung</description>
+		<type>CSH</type>
+		<csh_table>tx_bucher_domain_model_buchung</csh_table>
+	</meta>
+	<data type="array">
+	<languageKey index="default" type="array">
+	   
+			<label index="name.description">Name</label>
+			<label index="datum.description">Datum</label>
+			<label index="uhrzeit.description">Uhrzeit</label>
+			<label index="email.description">Email</label>
+			<label index="telefon.description">Telefon</label>
+			<label index="personen.description">Personen</label>
+			<label index="unterschrift.description">Kürzel</label>
+			<label index="notiz.description">Notiz</label>
+			<label index="schicht.description">Schicht</label>
+			<label index="tisch.description">Tisch</label>
+		</languageKey>
+	</data>
+</T3locallang>

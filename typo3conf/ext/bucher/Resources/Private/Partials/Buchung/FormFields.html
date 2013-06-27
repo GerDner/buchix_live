@@ -1,0 +1,64 @@
+<div class="form-left">
+<label for="name">
+    <span title="Name der reservierenden Person">Name</span><span class="required">*</span>
+</label>
+	<f:form.textfield property="name"  class="text"/>
+        <label for="tisch">
+    <span title="Name der reservierenden Person">Tisch</span><span class="required">*</span>
+</label>
+	<f:form.select property="tisch"
+                       class="tables"
+                       multiple="multiple"
+                       options="{tables}"
+
+                       optionValueField="uid"
+                       optionLabelField="number" />
+        
+<label for="datum">
+	<f:translate key="tx_bucher_domain_model_buchung.datum" /> <span class="required">*</span>
+</label>
+	<f:form.textfield property="datum"  class="text datum"/>
+<label for="uhrzeit">
+	<f:translate key="tx_bucher_domain_model_buchung.uhrzeit" /> <span class="required">*</span>
+</label>
+	<f:form.textfield property="uhrzeit" class="text time" />
+<label for="email">
+	<f:translate key="tx_bucher_domain_model_buchung.email" />
+</label>
+	<f:form.textfield property="email" class="text" />
+<label for="telefon">
+	<f:translate key="tx_bucher_domain_model_buchung.telefon" />
+</label>
+	<f:form.textfield property="telefon" class="text" />
+<label for="personen">
+	<f:translate key="tx_bucher_domain_model_buchung.personen" /> <span class="required">*</span>
+</label>
+	<f:form.textfield property="personen" class="text" />
+<label for="unterschrift">
+	<f:translate key="tx_bucher_domain_model_buchung.unterschrift" /> <span class="required">*</span>
+</label>
+	<f:form.textfield property="unterschrift" class="text" />
+	<label for="password">
+	Passwort (Manager)
+</label>
+	<f:form.textfield property="password" class="text" type="password"/>
+        <label for="schicht">
+	<f:translate key="tx_bucher_domain_model_buchung.schicht" />
+</label>
+       
+        <f:form.select property="schicht"
+                       options="{1:'Spätschicht',0:'Frühschicht'}"
+                       class="text"
+                       optionLabelField="name" />
+</div>
+        <div class="notiz">
+<label for="notiz">
+	<f:translate key="tx_bucher_domain_model_buchung.notiz" />
+</label>
+	<f:form.textarea property="notiz" cols="40" rows="7"  class="text"/>
+      <div class="FormErrors"><f:render partial="FormErrors" /></div>
+        </div>
+  <f:form.submit value="Speichern" />
+  <div class="newFormAbrechen">Abbrechen</div>
+
+        <div class="clear"></div>

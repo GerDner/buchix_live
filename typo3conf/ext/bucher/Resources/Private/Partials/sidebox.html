@@ -1,0 +1,20 @@
+<div class="sidebox">
+    <ul id="sidenav">
+<div class="btn-group btn-group-vertical">
+ 
+
+        <li><a class="newBuchung btn"><img src="fileadmin/templates/img/add.png"></a>
+        <li><a class="refresher btn"><img src="fileadmin/templates/img/refresh.png"></a></li>
+        </div>
+        <div class="newFormDiv">
+            
+           <f:form action="create"  name="newBuchung" object="{newBuchung}" pageType="11223344" class="newForm" onsubmit="form('.newForm','.newFormDiv');  return false;">
+                
+                           <f:render partial="Buchung/FormFields" arguments="{tables:tables}"/>
+	
+</f:form>
+        </div>
+    </li>
+    </ul>
+   
+</div>

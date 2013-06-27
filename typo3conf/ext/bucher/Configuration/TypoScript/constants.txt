@@ -1,0 +1,14 @@
+plugin.tx_bucher {
+	view {
+		# cat=plugin.tx_bucher/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:bucher/Resources/Private/Templates/
+		# cat=plugin.tx_bucher/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:bucher/Resources/Private/Partials/
+		# cat=plugin.tx_bucher/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:bucher/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_bucher//a; type=string; label=Default storage PID
+		storagePid = 
+	}
+}

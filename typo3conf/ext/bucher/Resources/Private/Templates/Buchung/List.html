@@ -1,0 +1,64 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<div style="display:none;" class="dialogBox"></div>
+<div  class="dialogBoxOk"></div>
+    <div class="refreshLink">
+        <f:link.action class="refresher" 
+                       action="ajaxlist" pageType="11223344">
+        </f:link.action>
+        <f:form action="ajaxlist" method="post" class="refreshForm"pageType="11223344" onsubmit="refreshContent(); return false;">
+            <input type="text" class="date" name="tx_bucher_ajax[date]" />
+            <input type="text" class="type" name="tx_bucher_ajax[type]" />
+        </f:form>
+    </div>
+    <div class="nav navbar-inner" id="navbar">
+        <div id="refreshbox"></div>
+      
+      
+        <div class="buchungen">
+
+        </div>
+
+        
+    </div>
+    <div class="message"><f:flashMessages /><div class="info"></div></div>
+    
+    
+<f:render partial="sidebox" arguments="{buchungen:buchungen,tables:tables}"/>
+<div id="tx-bucher-main" class="well" >
+     <div class="schichtType btn" data-type="1">Spätschicht</div>
+    <div id="datepicker" class="well">
+        <input type="text"/>
+    </div>
+    <div class="progress">
+  <div class="bar" style="width: 0%;"></div>
+</div>
+    <div class="clear"></div>
+    <div id ="map">
+     
+	<f:for each="{tables}" as="table">
+                      <div class="table {table.type} table-{table.number}" title="test" style="top:{table.ypos}px ;left:{table.xpos}px">
+                          <div class="tableNumberInfo">{table.plaetze}</div>
+                          <div class="title">{table.number}</div>
+                          <div class="uid" style="display:none;">{table.uid}</div>
+                          <div class="info" style="display:none;"></div>
+                      </div>
+	</f:for>
+    </div>
+
+</div>
+
+</f:section>
