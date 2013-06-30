@@ -44,7 +44,7 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
                       
 	    ),
 	    "kuerzel" => array(
-		 "rs","sk","kl","ta","db","jb","ec","bf","ng","sh","mh","vk","so","sp","mr","tr","rs","us","as","ls","sw"
+		 "ralf","sk","kl","ta","db","jb","ec","bf","ng","sh","mh","vk","so","sp","mr","tr","rs","us","as","ls","sw"
 	      ),
         "feiertage" =>array(
             "27.03.2013",
@@ -53,10 +53,10 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
 	 ); 
 
     //Manager overwrite
-	If($Buchung->getUnterschrift() == "sk" ){
+	If($Buchung->getUnterschrift() == "sk" or  $Buchung->getUnterschrift()== "ralf"){
 	
 	//@Todo Kürzelliste vergleichen
-	if((string)$Buchung->getPassword() == "penis"){
+	if((string)$Buchung->getPassword() == "penis" or (string)$Buchung->getPassword() == "wadweisich"){
 	return true;
 	}else{
             $this->addError (
@@ -64,6 +64,9 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
               12657211234 ); 
         return false;
         }
+        
+        
+       
 
         } else {
       //Checken ob Reservierungen an diesem Tag überhaupt erlaubt sind
