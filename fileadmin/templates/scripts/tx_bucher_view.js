@@ -29,7 +29,7 @@
 //@ToDo Doppelte Editboxen fixen
 
 function refreshContent(){
-jQuery('.voll').remove();
+
 //alle reserved Klassen entfernen
 jQuery(".reserved").removeClass("reserved");
 
@@ -66,8 +66,12 @@ jQuery(".reserved").removeClass("reserved");
 jQuery("#navbar").prepend(data);
 var tableSelected = [];
 jQuery("#navbar .buchungen .buchung").each(function(){
-
-    newNote(jQuery(this).find(".buchung-title-3 input").attr("value"),jQuery(this).find(".tableNumber").html(),jQuery(this).find("input.uhrzeit").attr("value"),jQuery(this).find("input.telefonnummer").attr("value"));
+if(jQuery(this).find("textarea.notizfield").val() != "") {
+	var notizfield = "Notiz!";
+	}else {
+		var notizfield = "";
+	}
+    newNote(jQuery(this).find(".buchung-title-3 input").attr("value"),jQuery(this).find(".tableNumber").html(),jQuery(this).find("input.uhrzeit").attr("value"),notizfield);
     jQuery(this).find(".tables option").each(function(){
        tableSelected.push(jQuery(this).attr("value"));
     });
@@ -75,8 +79,9 @@ jQuery("#navbar .buchungen .buchung").each(function(){
     jQuery(this).find(".tables").multiSelect();
      jQuery(this).find(".ms-container").append("<i class='icon-remove'></i>")
 });
+
 jQuery(".buchungen .buchung").each(function(){
-    
+    jQuery('.voll').remove();
     //Jedem Reservierten Tisch einen name zuweisen
   var name = jQuery(this).find(".buchung-title-3 input").attr("value");
 
