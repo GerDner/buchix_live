@@ -30,7 +30,7 @@ if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = dd+'.'+mm+'.'+yyyy;
 function sidebarArrow(){
     jQuery("#navbar").mouseenter(function(){
         jQuery("#navbar").stop(true,false).animate({
-            height : '+=370'
+            height : '438'
             
         },400);
         jQuery("#navbar").addClass("opened").removeClass("closed");
@@ -40,7 +40,7 @@ function sidebarArrow(){
     });
      jQuery("#navbar").mouseleave(function(){
          jQuery("#navbar").stop(true,false).animate({
-            height : '-=370'
+            height : '68'
         },400);
             jQuery("#navbar").addClass("closed").removeClass("opened");
            jQuery("#navbar .buchung").fadeOut(0);
