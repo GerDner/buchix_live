@@ -266,6 +266,6 @@ function ask(url) {
     
     function cancelNewForm(){
         jQuery(".newFormAbrechen").live("click",function(){
-            jQuery(".ui-icon-closethick").click();
+            jQuery(".ui-dialog-titlebar-close").click();
         });
     }
