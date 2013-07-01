@@ -44,7 +44,7 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
                       
 	    ),
 	    "kuerzel" => array(
-		 "ralf","sk","kl","ta","db","jb","ec","bf","ng","sh","mh","vk","so","sp","mr","tr","rs","us","as","ls","sw"
+		 "ralf","sk","iw","kl","ta","db","jb","ec","bf","ng","sh","mh","vk","so","sp","mr","tr","rs","us","as","ls","sw"
 	      ),
         "feiertage" =>array(
             "27.03.2013",
