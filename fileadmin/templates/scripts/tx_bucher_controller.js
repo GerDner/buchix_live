@@ -35,7 +35,7 @@ function sidebarArrow(){
         },400);
         jQuery("#navbar").addClass("opened").removeClass("closed");
     
-      jQuery("#navbar .buchung").delay(400).fadeIn(0);
+      jQuery("#navbar .buchung").delay(1200).fadeIn(0);
        
     });
      jQuery("#navbar").mouseleave(function(){
