@@ -13,7 +13,7 @@ body {
     color: black;
     color: black;
 }
-.node-title {
+.node-title, .buchung-title-3 {
 	text-transform: capitalize;
 }
 .ms-selection {
