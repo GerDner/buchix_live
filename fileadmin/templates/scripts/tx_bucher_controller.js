@@ -29,7 +29,7 @@ if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = dd+'.'+mm+'.'+yyyy;
 
 function sidebarArrow(){
     jQuery("#navbar").mouseenter(function(){
-        jQuery("#navbar").stop(true,false).animate({
+        jQuery("#navbar").stop(true,false).delay(800).animate({
             height : '438'
             
         },400);
