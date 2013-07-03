@@ -22,7 +22,7 @@ jQuery(function() {
 
 jQuery(document).ready(function() {
 
-
+jQuery(".table-8 .title").text("Scheune");
     jQuery(document).live("click",function(){
          jQuery("input.text.time").timepicker({
              'step': 15 ,
