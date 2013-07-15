@@ -56,7 +56,7 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
 	If($Buchung->getUnterschrift() == "sk" or  $Buchung->getUnterschrift()== "ralf"){
 	
 	//@Todo Kürzelliste vergleichen
-	if((string)$Buchung->getPassword() == "penis" or (string)$Buchung->getPassword() == "wadweisich"){
+	if((string)$Buchung->getPassword() == "81" or (string)$Buchung->getPassword() == "91134"){
 	return true;
 	}else{
             $this->addError (
