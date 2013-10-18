@@ -1,5 +1,5 @@
      jQuery.noConflict();
-     
+
 function error(error){
          throw new Error(error);
 }   
@@ -38,6 +38,12 @@ jQuery(".table-8 .title").text("Scheune");
 	  jQuery(".refresher").click(function(){refreshContent();});
 	  datePicker();
 	  sidebarArrow();
+	  
+	  
+	  jQuery(window).bind('beforeunload', function(){
+		return ' \n';
+	});
+	  
 	  newBuchung();
 	  editForm();
 	  tableclick();
@@ -88,3 +94,18 @@ jQuery(".closeNotizfield").live("click",function(){
 });
 
 });
+     jQuery(function(){
+	
+	 var modal = '<div class="modal hide fade" id="myModal"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h3>Nicht dein Ernst oder?</h3></div><div class="modal-body"><p>Finger weg von der rechten Maustaste - Hirni!</p></div><div class="modal-footer"><div  class=" lol btn">Habs kapiert!</div><div class="btn lol btn-primary">Mir doch egal</div></div></div>';
+jQuery('body').append(modal);
+});
+jQuery(".lol").live('click',function(){
+	jQuery("#myModal").modal('toggle');
+	
+});
+jQuery(document).bind("contextmenu",function(e){
+    
+       jQuery('#myModal').modal('toggle');
+       
+        return false;
+            });

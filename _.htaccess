@@ -31,8 +31,7 @@
 # http://typo3.org/documentation/mailing-lists/
 # 
 ####
-php_value post_max_size 30M
-php_value upload_max_filesize 30M
+
 
 ### Begin: Compression via TYPO3 ###
 

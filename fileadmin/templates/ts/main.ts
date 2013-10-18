@@ -47,4 +47,5 @@ ajaxcontent {
     admPanel = 0
    }
 }
+config.absRefPrefix = / 
 

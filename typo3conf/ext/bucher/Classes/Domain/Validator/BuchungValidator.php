@@ -35,7 +35,13 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
      * @param Tx_MittwaldTimetrack_Domain_Model_Buchung $Buchung
      */
     Public Function isValid($Buchung) {
-      
+      // checken ob gültiges Domänenobjekt
+        If($Buchung->getSchicht() == "2"){
+            $this->addError (
+              "Schicht auswählen",
+              1265721023 );
+        return false;
+        }
 	$config = array(
 	    "maxTables"=>4,
 	    "maxPersones"=>20,
@@ -44,11 +50,11 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
                       
 	    ),
 	    "kuerzel" => array(
-		 "ralf","sk","iw","kl","ta","db","jb","ec","bf","ng","sh","mh","vk","so","sp","mr","tr","rs","us","as","ls","sw"
+		 "ralf","sk","iw","kl","ta","db","jb","ec","bf","ng","sh","mh","vk","so","sp","mr","tr","rs","us","as","ls","sw","mw"
 	      ),
         "feiertage" =>array(
             "27.03.2013",
-            "28.03.2013"
+            "03.10.2013"
         ),
 	 ); 
 
@@ -138,6 +144,7 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
               1265721022 );
         return false;
         }
+        
         
         
         

@@ -5,6 +5,9 @@
  *     Description:
  *         Purpose of the stylesheet follows.
  */
+.note-title.row-fluid span{
+   text-transform:capitalize;
+}
 body {
    
     margin: 0;
