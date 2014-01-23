@@ -92,7 +92,7 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
    }else{
 //kein wochenende
        $time = explode(":",$Buchung->getUhrzeit());
-       if($time[0]<17){
+       if($time[0]<16){
            $this->addError (
               "An diesem Tag gibt es keine Frühschicht!",
               126572134 );

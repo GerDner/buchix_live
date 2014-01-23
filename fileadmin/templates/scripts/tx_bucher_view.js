@@ -109,7 +109,7 @@ if(jQuery('.table.reserved').length>4){
   }
            return false;
        });
-       
+       jQuery('.table.selected').removeClass('selected').animate({backgroundColor: '#ffa500'}, 300);
 }
 
 //Regelt die den Schichttyp

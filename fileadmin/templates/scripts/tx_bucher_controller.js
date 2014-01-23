@@ -121,6 +121,7 @@ function postEditForm(formclass,formDiv){
            console.log( jQuery("form" + formDiv).serialize());
            if(data == "1") {
       newInfo("Reservierung wurde geändert");
+      refreshContent();
            }else {
                
                newError("Editieren fehlgeschlagen. Die Buchung ist invalide!");
