@@ -1,12 +1,63 @@
-# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
 
-# list any PHP version you want to test against
 php:
-  # using major version aliases
-  # aliased to a recent 5.4.x version
+  - 5.3
   - 5.4
-  # aliased to a recent 5.5.x version
   - 5.5
+
+env:
+  - DB=mysql UNITTESTS=1
+  - DB=none FUNCTIONALTESTS=1
+  - DB=none PHPLINT=1
+
+services:
+  - memcached
+
+before_script:
+  - sudo apt-get update && sudo apt-get install git
+  - git clone --single-branch --branch master --depth 1 git://github.com/typo3-ci/TYPO3-Travis-Integration.git build-environment
+  - source build-environment/install-helper.sh
+
+  - >
+    if [[ "$UNITTESTS" == "1" ]]; then
+            if [[ "$TRAVIS_PHP_VERSION" == "5.3" ]]; then
+                    installPhpModule -y apc;
+            fi
+            if [[ "$TRAVIS_PHP_VERSION" != "5.5" ]]; then
+                    installPhpModule igbinary
+            fi
+            installPhpModule -y memcache
+            installPhpModule redis
+            mv build-environment/typo3conf .
+            git clone --single-branch --branch master --depth 1 git://git.typo3.org/TYPO3v4/Extensions/phpunit.git typo3conf/ext/phpunit/
+            mkdir fileadmin
+            mkdir uploads
+            mkdir typo3temp
+    fi
+
+  - >
+    if [[ "$FUNCTIONALTESTS" == "1" ]]; then
+            mv build-environment/typo3conf .
+            git clone --single-branch --branch master --depth 1 git://git.typo3.org/TYPO3v4/Extensions/phpunit.git typo3conf/ext/phpunit/
+            mkdir typo3temp
+    fi
+
+  - >
+    if [[ "$DB" == "mysql" ]]; then
+            mysql -e "DROP DATABASE IF EXISTS typo3_test;" -uroot
+            mysql -e "CREATE DATABASE IF NOT EXISTS typo3_test;" -uroot
+            php build-environment/dbimport/DatabaseImport.php
+            mysql -uroot typo3_test < build-environment/dbimport/cli_users.sql
+    fi
+
 script:
-   - php $PWD/typo3/cli_dispatch.phpsh phpunit -c typo3/sysext/core/Build/UnitTests.xml
+  - >
+    if [[ "$PHPLINT" == "1" ]]; then
+            phpLint all
+    elif [[ "$UNITTESTS" == "1" ]]; then
+            ./typo3conf/ext/phpunit/Composer/vendor/bin/phpunit -c typo3/sysext/core/Build/UnitTests.xml
+    elif [[ "$FUNCTIONALTESTS" == "1" ]]; then
+            ./typo3conf/ext/phpunit/Composer/vendor/bin/phpunit -c typo3/sysext/core/Build/FunctionalTests.xml
+    else
+            exit 1
+    fi
