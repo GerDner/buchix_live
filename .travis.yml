@@ -8,3 +8,5 @@ php:
   - 5.4
   # aliased to a recent 5.5.x version
   - 5.5
+script:
+   - php $PWD/typo3/cli_dispatch.phpsh phpunit -c typo3/sysext/core/Build/UnitTests.xml
