@@ -1,6 +1,21 @@
  //DatePicker
  //Erzeugt den Datepicker und belegt ihn mit Standardwerten
  //@ToDo Pagerefresh auslösen
+// save original function to call in our new one
+var _gotoToday = jQuery.datepicker._gotoToday;
+
+// make a new _gotoToday function that does what the old one
+// did, but adds some extra feature
+jQuery.datepicker._gotoToday = function(id) {
+     _gotoToday.call( this, id ); 
+     var target = jQuery(id), 
+         inst = this._getInst(target[0]);
+    
+    //Added by Ryan Waterer on 1/30/2009 to have it return 
+    // the value when the person selects the "Today" button
+     this._selectDate(id, this._formatDate(inst,
+         inst.selectedDay, inst.drawMonth, inst.drawYear));
+}
 
 function datePicker(){
         var today = new Date();
@@ -11,6 +26,11 @@ var yyyy = today.getFullYear();
 if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = dd+'.'+mm+'.'+yyyy;
  jQuery("#datepicker input").val(today);
     jQuery("#datepicker input").datepicker({
+        firstDay: 1,
+        gotoCurrent:true,
+        currentText: 'Heute',
+        closeText: 'Schließen',
+        showButtonPanel: true,
         "dayNamesMin" :[ "So", "Mo", "Di", "Mi", "Do", "Fr", "Sa" ],
         "dateFormat": "dd.mm.yy",
         "monthNames": [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ],
@@ -192,6 +212,11 @@ function form(formclass,formDiv){
 jQuery(".newBuchung").click(function(e){
     var datum = jQuery("#datepicker input").attr("value");
      jQuery(".newFormDiv.ui-dialog-content .datum").datepicker({
+        firstDay: 1,
+        closeText: 'Schließen',
+        gotoCurrent:true,
+        currentText: 'Heute',
+        showButtonPanel: true,
         "dayNamesMin" :[ "So", "Mo", "Di", "Mi", "Do", "Fr", "Sa" ],
         "dateFormat": "dd.mm.yy",
         "monthNames": [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ],

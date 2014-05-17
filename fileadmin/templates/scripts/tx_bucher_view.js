@@ -33,6 +33,9 @@ function refreshContent(){
 //alle reserved Klassen entfernen
 jQuery(".reserved").removeClass("reserved");
 
+jQuery(".table.selected").removeClass('selected').animate({backgroundColor: '#ffa500'}, 300);;
+jQuery('.voll').remove();
+
 
 //neues Refresh Datum setzen
         var date = jQuery("#datepicker input").val();
