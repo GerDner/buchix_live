@@ -14,14 +14,21 @@
                        optionValueField="uid"
                        optionLabelField="number" />
         
+
 <label for="datum">
 	<f:translate key="tx_bucher_domain_model_buchung.datum" /> <span class="required">*</span>
 </label>
 	<f:form.textfield property="datum"  class="text datum"/>
+
 <label for="uhrzeit">
 	<f:translate key="tx_bucher_domain_model_buchung.uhrzeit" /> <span class="required">*</span>
 </label>
+
 	<f:form.textfield property="uhrzeit" class="text time" />
+<label for="personen">
+	<f:translate key="tx_bucher_domain_model_buchung.personen" /> <span class="required">*</span>
+</label>
+	<f:form.textfield property="personen" class="text" />
 <label for="email">
 	<f:translate key="tx_bucher_domain_model_buchung.email" />
 </label>
@@ -30,10 +37,7 @@
 	<f:translate key="tx_bucher_domain_model_buchung.telefon" />
 </label>
 	<f:form.textfield property="telefon" class="text" />
-<label for="personen">
-	<f:translate key="tx_bucher_domain_model_buchung.personen" /> <span class="required">*</span>
-</label>
-	<f:form.textfield property="personen" class="text" />
+
 <label for="unterschrift">
 	<f:translate key="tx_bucher_domain_model_buchung.unterschrift" /> <span class="required">*</span>
 </label>

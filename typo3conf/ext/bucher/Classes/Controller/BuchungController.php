@@ -116,7 +116,7 @@ class Tx_Bucher_Controller_BuchungController extends Tx_Extbase_MVC_Controller_A
 	 * action edit
 	 *
 	 * @param Tx_Bucher_Domain_Model_Buchung $buchung
-                   *@dontvalidate $buchung         
+     * @dontvalidate $buchung         
 	 * @return void
 	 */
 	public function editAction(Tx_Bucher_Domain_Model_Buchung $buchung) {
@@ -128,7 +128,7 @@ class Tx_Bucher_Controller_BuchungController extends Tx_Extbase_MVC_Controller_A
 	 * action update
 	 *
 	 * @param Tx_Bucher_Domain_Model_Buchung $buchung
-	 *@dontvalidate $buchung
+	 * @ignorevalidation $buchung
 	 * @return void
 	 */
 	public function updateAction(Tx_Bucher_Domain_Model_Buchung $buchung) {
@@ -141,7 +141,7 @@ class Tx_Bucher_Controller_BuchungController extends Tx_Extbase_MVC_Controller_A
 	 * action delete
 	 *
 	 * @param Tx_Bucher_Domain_Model_Buchung $buchung
-            *@dontvalidate $buchung            
+     * @dontvalidate $buchung            
 	 * @return void
 	 */
 	public function deleteAction(Tx_Bucher_Domain_Model_Buchung $buchung) {

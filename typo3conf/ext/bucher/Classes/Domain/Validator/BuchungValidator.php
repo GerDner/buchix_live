@@ -46,15 +46,15 @@ class Tx_Bucher_Domain_Validator_BuchungValidator extends Tx_Extbase_Validation_
 	    "maxTables"=>4,
 	    "maxPersones"=>20,
 	    "noReservation"=>array(
-		"24.12.2013","26.03.2013"
+	
                       
 	    ),
 	    "kuerzel" => array(
-		 "ralf","sk","iw","kl","ta","db","jb","ec","bf","ng","sh","mh","vk","so","sp","mr","tr","rs","us","as","ls","sw","mw"
+		 "ralf","sk","iw","kl","ta","db","jb","ec","bf","ng","sh","mh","vk","so","sp","mr","tr","rs","us","as","ls","sw","mw","nm"
 	      ),
         "feiertage" =>array(
-            "27.03.2013",
-            "03.10.2013"
+            "26.12.2014",
+            "19.06.2014"
         ),
 	 ); 
 

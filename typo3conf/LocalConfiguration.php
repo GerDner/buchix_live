@@ -8,7 +8,7 @@ return array(
 		'database' => 'buchix',
 		'extTablesDefinitionScript' => 'extTables.php',
 		'host' => 'localhost',
-		'password' => 'root',
+		'password' => 'massari555',
 		'username' => 'root',
 	),
 	'EXT' => array(
